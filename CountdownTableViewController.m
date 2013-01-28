@@ -157,7 +157,7 @@
     if(![fileManager fileExistsAtPath:finalPath]) {
         NSString *path = [[NSBundle mainBundle] bundlePath];
         finalPath = [path stringByAppendingPathComponent:@"Countdowns.plist"];
-	NSLog(@"We just loaded the plist from the bundle path!!");
+	NSLog(@"Fixed message!!");
     }
     
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile: finalPath];
