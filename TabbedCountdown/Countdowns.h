@@ -10,6 +10,7 @@
 
 @interface Countdowns : NSObject
 
+//Properties for name and target date
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSDate *targetDate;
 

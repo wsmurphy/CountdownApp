@@ -39,6 +39,7 @@
     [super viewDidUnload];
 }
 
+//Support only portrait mode
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
@@ -58,6 +59,7 @@
 	[self.delegate timePickerViewControllerDidCancel:self];
 }
 
+//If done button is pressed, call didGetTime
 - (IBAction)done:(id)sender
 {
     [self.delegate timePickerViewController:self didGetTime:timePicker.date];
