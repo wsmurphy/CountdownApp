@@ -141,6 +141,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+//Adding another comment. This was added on the branch testbranch
 - (void)addCountdownViewController:(CountdownTableViewController *)controller didAddCountdown:(Countdowns *)countdown
 {
 	[self.countdownsArray addObject:countdown];
@@ -157,6 +158,8 @@
     if(![fileManager fileExistsAtPath:finalPath]) {
         NSString *path = [[NSBundle mainBundle] bundlePath];
         finalPath = [path stringByAppendingPathComponent:@"Countdowns.plist"];
+	//Log a message when the list is loaded
+	NSLog(@"Loaded Countdowns.plist from bundle path");
     }
     
     NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile: finalPath];
