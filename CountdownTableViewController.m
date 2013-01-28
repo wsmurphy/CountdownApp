@@ -172,7 +172,7 @@
     
     BOOL rc = [data writeToFile:finalPath atomically:YES];
     if (rc != YES) {
-        //TODO: Hmore ConficTS!! failure better
+        //TODO: Handle conflicts better
         NSLog(@"Write failed");
     }
     
