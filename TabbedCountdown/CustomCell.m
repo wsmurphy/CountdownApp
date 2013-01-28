@@ -25,12 +25,12 @@
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGColorRef whiteColor = [UIColor colorWithRed:1.0 green:1.0
-                                             blue:1.0 alpha:1.0].CGColor;
-    CGColorRef lightGrayColor = [UIColor colorWithRed:230.0/255.0 green:230.0/255.0
-                                                 blue:230.0/255.0 alpha:1.0].CGColor;
-    CGColorRef separatorColor = [UIColor colorWithRed:208.0/255.0 green:208.0/255.0
-                                                 blue:208.0/255.0 alpha:1.0].CGColor;
+    CGColorRef whiteColor = [UIColor colorWithRed:0.5 green:1.0
+                                             blue:0.5 alpha:1.0].CGColor;
+    CGColorRef lightGrayColor = [UIColor colorWithRed:220.0/255.0 green:240.0/255.0
+                                                 blue:220.0/255.0 alpha:1.0].CGColor;
+    CGColorRef separatorColor = [UIColor colorWithRed:108.0/255.0 green:200.0/255.0
+                                                 blue:108.0/255.0 alpha:1.0].CGColor;
     
     CGRect paperRect = self.bounds;
     
