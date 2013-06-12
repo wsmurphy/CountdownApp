@@ -16,7 +16,7 @@
 
 @end
 
-@interface CountdownViewController : UIViewController <UITextFieldDelegate> {
+@interface CountdownViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate> {
     
     __weak IBOutlet UILabel *myCountdownMins;
     __weak IBOutlet UILabel *myCountdownDays;
@@ -36,6 +36,10 @@
 
 - (IBAction)showFullDate:(id)sender;
 
-- (void)drawRect;
+-(IBAction)actionSheetButtonPressed:(id)sender;
+
+- (void)fbButtonPressed;
+
+- (void)twtrButtonPressed;
 
 @end

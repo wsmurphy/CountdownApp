@@ -9,7 +9,6 @@
 #import "CountdownTableViewController.h"
 #import "CountdownViewController.h"
 #import "Countdowns.h"
-#import "CustomCell.h"
 #import <UIKit/UILocalNotification.h>
 #import <QuartzCore/QuartzCore.h>
 
@@ -88,8 +87,6 @@
 	Countdowns *countdown = [self.countdownsArray objectAtIndex:indexPath.row];
     cell.textLabel.backgroundColor = nil;
     cell.detailTextLabel.backgroundColor = nil;
-    cell.backgroundView = [[CustomCell alloc] init];
-    cell.selectedBackgroundView = [[CustomCell alloc] init];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -97,6 +94,8 @@
     
 	cell.detailTextLabel.text = [dateFormatter stringFromDate:countdown.targetDate];
     cell.textLabel.text = countdown.name;
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
     
     return cell;
 }

@@ -8,10 +8,12 @@
 
 #import "CountdownViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import <Social/Social.h>
 
 @interface CountdownViewController ()
 {
     NSTimer *timer;
+    UIView *secondsView;
     BOOL showing;
 }
 @end
@@ -24,6 +26,9 @@
 @synthesize delegate;
 @synthesize targetDate;
 @synthesize targetLabel;
+
+#define facebookAction 0
+#define twitterAction 1
 
 - (NSTimeInterval)getIntervalInSeconds {
 
@@ -48,7 +53,21 @@
     
     self.myCountdownHours.text = [NSString stringWithFormat:@"%d", remHours];
     self.myCountdownMins.text = [NSString stringWithFormat:@"%d", remMins];
+    
+
+    //Animate seconds button
+    CGRect newFrame = secondsView.frame;
+    newFrame.origin.x += (newFrame.size.width / 2);
+    newFrame.size.width = 0;
+    secondsView.frame = newFrame;
     self.myCountdownSeconds.text = [NSString stringWithFormat:@"%d", remSecs];
+    [UIView animateWithDuration:0.5
+                     animations:^{
+                         CGRect newFrame = secondsView.frame;
+                         newFrame.origin.x -= 25;
+                         newFrame.size.width = 50;
+                         secondsView.frame = newFrame;
+                     }];
 
 }
 
@@ -62,14 +81,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
 
-    
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
-                                     target:self
-                                   selector:@selector(updateCounter:)
-                                   userInfo:nil
-                                    repeats:YES];
-    [self updateCounter:nil];
     showing = NO;
 
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -87,13 +98,31 @@
         self.myCountdownDays.hidden = YES;
         
         self.expiredView.hidden = NO;
-        self.expiredView.transform = CGAffineTransformMakeRotation(135 * M_PI / 180);
+        
+        /* Bottom to top angled "Expired"
+           self.expiredView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(-1.0, -1.0), CGAffineTransformMakeRotation(135 * M_PI / 180));
+        */
+        
+        //Top to bottom angled "Expired"
+        self.expiredView.transform = CGAffineTransformMakeRotation(45 * M_PI / 180);
+        
         [self.view bringSubviewToFront:self.expiredView];
         
-        
-        
     } else {
-       [self drawRect];  
+        if(myCountdownDays.isHidden != YES) {
+            [self.view addSubview:self.myCountdownDays];
+        }
+        
+        [self.view addSubview:self.myCountdownHours];
+        [self.view addSubview:self.myCountdownMins];
+        [self.view addSubview:self.myCountdownSeconds];
+        
+        timer = [NSTimer scheduledTimerWithTimeInterval:1.0f
+                                                 target:self
+                                               selector:@selector(updateCounter:)
+                                               userInfo:nil
+                                                repeats:YES];
+        [self updateCounter:nil];
     }
 
 }
@@ -142,50 +171,116 @@
     }
 }
 
-- (void) drawRect {
-    if(myCountdownDays.isHidden != YES) {
-        CGRect daysRect=CGRectMake(25,103,50,50);
-        UIView *dayView=[[UIView alloc]initWithFrame:daysRect];
-        dayView.backgroundColor=[UIColor whiteColor];
-        dayView.layer.cornerRadius = 8;
-        [self.view addSubview:dayView];
-        
-        [self.myCountdownDays setFrame:daysRect];
-        [self.myCountdownDays setTextColor:[UIColor blackColor]];
-        [self.view addSubview:self.myCountdownDays];
-    }
+#pragma - UIActionSheetDelegate
+
+- (IBAction)actionSheetButtonPressed:(id)sender {
+    //Create action sheet
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Social actions" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Share to Facebook", @"Share to Twitter", nil];
+    [actionSheet showFromBarButtonItem:sender animated:YES];
     
-    CGRect hoursRect=CGRectMake(95,103,50,50);
-    UIView *hourView=[[UIView alloc]initWithFrame:hoursRect];
-    hourView.backgroundColor=[UIColor whiteColor];
-    hourView.layer.cornerRadius = 8;
-    [self.view addSubview:hourView];
-    
-    [self.myCountdownHours setFrame:hoursRect];
-    [self.myCountdownHours setTextColor:[UIColor blackColor]];
-    [self.view addSubview:self.myCountdownHours];
-    
-    
-    CGRect minRect=CGRectMake(165,103,50,50);
-    UIView *minView=[[UIView alloc]initWithFrame:minRect];
-    minView.backgroundColor=[UIColor whiteColor];
-    minView.layer.cornerRadius = 8;
-    [self.view addSubview:minView];
-    
-    [self.myCountdownMins setFrame:minRect];
-    [self.myCountdownMins setTextColor:[UIColor blackColor]];
-    [self.view addSubview:self.myCountdownMins];
-   
-    
-    CGRect secRect=CGRectMake(235,103,50,50);
-    UIView *secView=[[UIView alloc]initWithFrame:secRect];
-    secView.backgroundColor=[UIColor whiteColor];
-    secView.layer.cornerRadius = 8;
-    [self.view addSubview:secView];
-    
-    [self.myCountdownSeconds setFrame:secRect];
-    [self.myCountdownSeconds setTextColor:[UIColor blackColor]];
-    [self.view addSubview:self.myCountdownSeconds];
 }
 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    //TODO: Are constants better than #defines?
+    if(buttonIndex == facebookAction) {
+        [self fbButtonPressed];
+    } else if (buttonIndex == twitterAction) {
+        [self twtrButtonPressed];
+    } else {
+        //WTF?
+    }
+}
+
+#pragma - Facebook Integration
+
+- (void)fbButtonPressed {
+    //Let's get the text to post
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        
+        SLComposeViewController *faceBookSheet=[SLComposeViewController composeViewControllerForServiceType: SLServiceTypeFacebook];
+        
+        //Calls the function for set Text
+        [faceBookSheet setInitialText:[NSString stringWithFormat:@"I have %@ days %@ hours %@ minutes %@ seconds until %@.", myCountdownDays.text, myCountdownHours.text, myCountdownMins.text, myCountdownSeconds.text, self.title]];
+        
+        // Specifying a block to be called when the user is finished. This block is not guaranteed
+        // To be called on any particular thread. It is cleared after being called.
+        [faceBookSheet setCompletionHandler:[self fbCompletionHandlerFunction]];
+        
+        //Presenting the FB sheet
+        [self presentViewController:faceBookSheet animated: YES completion: nil];
+    }
+    
+}
+
+
+- (SLComposeViewControllerCompletionHandler) fbCompletionHandlerFunction {
+    SLComposeViewControllerCompletionHandler resultFB = ^(SLComposeViewControllerResult result) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook Completion Message"
+                                                        message:@"Default"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                break;
+            case SLComposeViewControllerResultDone:
+                alert.message = @"Post Successfull";
+                [alert show];
+                break;
+            default:
+                break;
+        }
+    };
+    
+    return resultFB;
+    
+}
+
+#pragma - Twitter Integration
+
+- (void)twtrButtonPressed {
+    //Let's get the text to post
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        
+        SLComposeViewController *twitterSheet=[SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        
+        //Calls the function for set Text
+        [twitterSheet setInitialText:[NSString stringWithFormat:@"I have %@ days %@ hours %@ minutes %@ seconds until %@.", myCountdownDays.text, myCountdownHours.text, myCountdownMins.text, myCountdownSeconds.text, self.title]];
+        
+        // Specifying a block to be called when the user is finished. This block is not guaranteed
+        // To be called on any particular thread. It is cleared after being called.
+        [twitterSheet setCompletionHandler:[self twtrCompletionHandlerFunction]];
+        
+        //Presenting the FB sheet
+        [self presentViewController:twitterSheet animated: YES completion: nil];
+    }
+    
+}
+
+- (SLComposeViewControllerCompletionHandler) twtrCompletionHandlerFunction {
+    SLComposeViewControllerCompletionHandler resultTwtr = ^(SLComposeViewControllerResult result) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter Completion Message"
+                                                        message:@"Default"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                break;
+            case SLComposeViewControllerResultDone:
+                alert.message = @"Tweet Successfull";
+                [alert show];
+                break;
+            default:
+                break;
+        }
+    };
+    
+    return resultTwtr;
+    
+}
 @end

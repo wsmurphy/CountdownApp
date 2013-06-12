@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AC26511D-469D-4E3A-ADDC-8F8ACE98B910</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TabbedCountdown</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>81FB0EC6-D581-498A-BD30-427191FE5DC2</key>
+		<string>https://github.com/wsmurphy/CountdownApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TabbedCountdown.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>81FB0EC6-D581-498A-BD30-427191FE5DC2</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/wsmurphy/CountdownApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>81FB0EC6-D581-498A-BD30-427191FE5DC2</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>81FB0EC6-D581-498A-BD30-427191FE5DC2</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TabbedCountdown</string>
+		</dict>
+	</array>
+</dict>
+</plist>

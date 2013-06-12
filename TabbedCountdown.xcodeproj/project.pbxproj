@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		60080F491534842100C8D6AD /* CountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60080F481534842100C8D6AD /* CountdownViewController.m */; };
+		601C19C916B9C5D700C1EB91 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601C19C816B9C5D700C1EB91 /* Social.framework */; };
+		601C19E116BAEAF200C1EB91 /* twitter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 601C19DF16BAEAF200C1EB91 /* twitter.jpg */; };
+		601C19E216BAEAF200C1EB91 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 601C19E016BAEAF200C1EB91 /* facebook.png */; };
 		6024E5051576A273003E370D /* Countdowns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6024E5041576A273003E370D /* Countdowns.plist */; };
 		604423BE15332C7E00032AB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604423BD15332C7E00032AB8 /* UIKit.framework */; };
 		604423C015332C7E00032AB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604423BF15332C7E00032AB8 /* Foundation.framework */; };
@@ -22,7 +25,6 @@
 		604423F015335C6900032AB8 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423EF15335C6900032AB8 /* DatePickerViewController.m */; };
 		60705BAD168CD594004E88D3 /* clock.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60705BAC168CD594004E88D3 /* clock.gif */; };
 		60D55FFD167BC98A00EB1119 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */; };
-		60FC72F1168DF36900A3D264 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FC72F0168DF36900A3D264 /* CustomCell.m */; };
 		60FC72F5168DFBFC00A3D264 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FC72F4168DFBFC00A3D264 /* Common.m */; };
 		60FCE09816A09E7C009753C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FCE09716A09E7C009753C4 /* QuartzCore.framework */; };
 		60FCE09A16A0A6F9009753C4 /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60FCE09916A0A6F9009753C4 /* earth.jpg */; };
@@ -31,6 +33,9 @@
 /* Begin PBXFileReference section */
 		60080F471534842100C8D6AD /* CountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountdownViewController.h; sourceTree = "<group>"; };
 		60080F481534842100C8D6AD /* CountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountdownViewController.m; sourceTree = "<group>"; };
+		601C19C816B9C5D700C1EB91 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		601C19DF16BAEAF200C1EB91 /* twitter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = twitter.jpg; path = ../../../Downloads/twitter.jpg; sourceTree = "<group>"; };
+		601C19E016BAEAF200C1EB91 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = facebook.png; path = ../../../Downloads/facebook.png; sourceTree = "<group>"; };
 		6024E5041576A273003E370D /* Countdowns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Countdowns.plist; sourceTree = "<group>"; };
 		604423B915332C7E00032AB8 /* TabbedCountdown.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedCountdown.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		604423BD15332C7E00032AB8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -54,8 +59,6 @@
 		60705BAC168CD594004E88D3 /* clock.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = clock.gif; path = ../../../Downloads/clock.gif; sourceTree = "<group>"; };
 		60D55FFB167BC98A00EB1119 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
-		60FC72EF168DF36900A3D264 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
-		60FC72F0168DF36900A3D264 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		60FC72F3168DFBFC00A3D264 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		60FC72F4168DFBFC00A3D264 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		60FCE09716A09E7C009753C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -67,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				601C19C916B9C5D700C1EB91 /* Social.framework in Frameworks */,
 				60FCE09816A09E7C009753C4 /* QuartzCore.framework in Frameworks */,
 				604423BE15332C7E00032AB8 /* UIKit.framework in Frameworks */,
 				604423C015332C7E00032AB8 /* Foundation.framework in Frameworks */,
@@ -80,6 +84,7 @@
 		604423AE15332C7E00032AB8 = {
 			isa = PBXGroup;
 			children = (
+				601C19C816B9C5D700C1EB91 /* Social.framework */,
 				60FCE09716A09E7C009753C4 /* QuartzCore.framework */,
 				604423C315332C7E00032AB8 /* TabbedCountdown */,
 				604423BC15332C7E00032AB8 /* Frameworks */,
@@ -124,8 +129,6 @@
 				604423EF15335C6900032AB8 /* DatePickerViewController.m */,
 				60D55FFB167BC98A00EB1119 /* TimePickerViewController.h */,
 				60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */,
-				60FC72EF168DF36900A3D264 /* CustomCell.h */,
-				60FC72F0168DF36900A3D264 /* CustomCell.m */,
 				60FC72F3168DFBFC00A3D264 /* Common.h */,
 				60FC72F4168DFBFC00A3D264 /* Common.m */,
 			);
@@ -135,6 +138,8 @@
 		604423C415332C7E00032AB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				601C19DF16BAEAF200C1EB91 /* twitter.jpg */,
+				601C19E016BAEAF200C1EB91 /* facebook.png */,
 				60FCE09916A0A6F9009753C4 /* earth.jpg */,
 				60705BAC168CD594004E88D3 /* clock.gif */,
 				604423C515332C7E00032AB8 /* TabbedCountdown-Info.plist */,
@@ -202,6 +207,8 @@
 				6024E5051576A273003E370D /* Countdowns.plist in Resources */,
 				60705BAD168CD594004E88D3 /* clock.gif in Resources */,
 				60FCE09A16A0A6F9009753C4 /* earth.jpg in Resources */,
+				601C19E116BAEAF200C1EB91 /* twitter.jpg in Resources */,
+				601C19E216BAEAF200C1EB91 /* facebook.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +227,6 @@
 				604423F015335C6900032AB8 /* DatePickerViewController.m in Sources */,
 				60080F491534842100C8D6AD /* CountdownViewController.m in Sources */,
 				60D55FFD167BC98A00EB1119 /* TimePickerViewController.m in Sources */,
-				60FC72F1168DF36900A3D264 /* CustomCell.m in Sources */,
 				60FC72F5168DFBFC00A3D264 /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +304,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TabbedCountdown/TabbedCountdown-Prefix.pch";
 				INFOPLIST_FILE = "TabbedCountdown/TabbedCountdown-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -309,6 +316,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TabbedCountdown/TabbedCountdown-Prefix.pch";
 				INFOPLIST_FILE = "TabbedCountdown/TabbedCountdown-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

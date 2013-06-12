@@ -45,11 +45,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TabbedCountdown/CountdownViewController.m"
-         timestampString = "380497060.092139"
+         timestampString = "392704105.610945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "79"
-         endingLineNumber = "79"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -58,13 +58,13 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TabbedCountdown/CountdownViewController.m"
-         timestampString = "380499073.057831"
+         timestampString = "392704105.610945"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "119"
-         endingLineNumber = "119"
-         landmarkName = "@implementation CountdownViewController"
-         landmarkType = "3">
+         startingLineNumber = "147"
+         endingLineNumber = "147"
+         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
