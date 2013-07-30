@@ -87,9 +87,13 @@
     [formatter setDateStyle:NSDateFormatterMediumStyle];
     [formatter setTimeStyle:NSDateFormatterNoStyle];
     
-    NSTimeZone *tz = [NSTimeZone timeZoneWithName:@"America/New_York"];
-    [formatter setTimeZone:tz];
-    self.targetLabel.text = [formatter stringFromDate:targetDate];
+    if(self.untilText == nil) {
+        NSTimeZone *tz = [NSTimeZone timeZoneWithName:@"America/New_York"];
+        [formatter setTimeZone:tz];
+        self.targetLabel.text = [formatter stringFromDate:targetDate];
+    } else {
+        self.targetLabel.text = self.untilText;
+    }
 
     if(myCountdownDays.text.intValue + myCountdownHours.text.intValue + myCountdownMins.text.intValue + myCountdownSeconds.text.intValue < 0) {
         self.myCountdownSeconds.hidden = YES;

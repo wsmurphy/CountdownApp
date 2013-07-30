@@ -8,7 +8,7 @@
 
 #import "CountdownTableViewController.h"
 #import "CountdownViewController.h"
-#import "Countdowns.h"
+#import "Countdown.h"
 #import <UIKit/UILocalNotification.h>
 #import <QuartzCore/QuartzCore.h>
 
@@ -54,17 +54,13 @@
 		addCountdownViewController.delegate = self;
 	} else if ([segue.identifier isEqualToString:@"CountdownPush"])
 	{
-        NSLog(@"Countdown push start");
         CountdownViewController *countdownViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Countdowns *countdown = [self.countdownsArray objectAtIndex:indexPath.row];
-        //TODO: Why is this the wrong timestamp?
-        NSLog(@"Targetdate for selected is %@", countdown.targetDate);
+        Countdown *countdown = [self.countdownsArray objectAtIndex:indexPath.row];
         countdownViewController.targetDate = countdown.targetDate;
         countdownViewController.title = countdown.name;
+        countdownViewController.untilText = countdown.untilText;
         countdownViewController.delegate = self;
-        NSLog(@"Countdown push end");
-        
 	}
 }
 
@@ -84,18 +80,22 @@
 {
 	UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:@"CountdownCell"];
-	Countdowns *countdown = [self.countdownsArray objectAtIndex:indexPath.row];
-    cell.textLabel.backgroundColor = nil;
-    cell.detailTextLabel.backgroundColor = nil;
-    
+	Countdown *countdown = [self.countdownsArray objectAtIndex:indexPath.row];
+       
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     
 	cell.detailTextLabel.text = [dateFormatter stringFromDate:countdown.targetDate];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.textLabel.text = countdown.name;
-    cell.textLabel.backgroundColor = [UIColor clearColor];
-    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.contentView.backgroundColor = [UIColor colorWithRed:0.0 green:214.0/256.0 blue:151.0/256.0 alpha:1.0];
+    for ( UIView* view in cell.contentView.subviews )
+    {
+        view.backgroundColor = [ UIColor clearColor ];
+    }
+    
     
     return cell;
 }
@@ -105,7 +105,7 @@
 	if (editingStyle == UITableViewCellEditingStyleDelete)
 	{
         
-       	 Countdowns *countdown = [self.countdownsArray objectAtIndex:indexPath.row];
+       	 Countdown *countdown = [self.countdownsArray objectAtIndex:indexPath.row];
              
        	 //Delete this countdown to the plist, so it will not reapper on opening the app
        	 NSArray *arrayPaths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
@@ -140,8 +140,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-//Adding another comment. This was added on the branch testbranch
-- (void)addCountdownViewController:(CountdownTableViewController *)controller didAddCountdown:(Countdowns *)countdown
+- (void)addCountdownViewController:(CountdownTableViewController *)controller didAddCountdown:(Countdown *)countdown
 {
 	[self.countdownsArray addObject:countdown];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.countdownsArray count] - 1 inSection:0];
@@ -181,7 +180,6 @@
     [local setTimeZone:[NSTimeZone localTimeZone]];
     [local setAlertBody:[NSString stringWithFormat:@"Countdown %@ has expired!", countdown.name]];
     [local setAlertAction:[NSString stringWithFormat:@"Dismiss"]];
-    [local setApplicationIconBadgeNumber:[UIApplication sharedApplication].applicationIconBadgeNumber + 1];
   	
     [[UIApplication sharedApplication] scheduleLocalNotification:local];
     

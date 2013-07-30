@@ -33,6 +33,7 @@
 @property (strong, nonatomic) IBOutlet UIView *expiredView;
 
 @property (nonatomic, retain) NSDate *targetDate;
+@property (nonatomic, retain) NSString *untilText;
 
 - (IBAction)showFullDate:(id)sender;
 

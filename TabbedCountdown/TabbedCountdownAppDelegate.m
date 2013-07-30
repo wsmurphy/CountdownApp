@@ -8,7 +8,7 @@
 
 #import "TabbedCountdownAppDelegate.h"
 #import "CountdownTableViewController.h"
-#import "Countdowns.h"
+#import "Countdown.h"
 
 @implementation TabbedCountdownAppDelegate {
     NSMutableArray *countdownsArray;
@@ -34,7 +34,7 @@
     NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:finalPath];
     countdownsArray = [NSMutableArray arrayWithCapacity:[plistData count]];
     for(id key in plistData) {
-        Countdowns *countdown = [[Countdowns alloc] init];
+        Countdown *countdown = [[Countdown alloc] init];
         NSDate *value = [plistData objectForKey:key];
         NSLog(@"DEBUG: %@  %@", key, value);
         countdown.name = key;

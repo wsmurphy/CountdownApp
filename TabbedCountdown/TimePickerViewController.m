@@ -49,9 +49,15 @@
 {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterNoStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
     
-    timeLabel.text = [dateFormatter stringFromDate:timePicker.date];
+    timeLabel.text = [dateFormatter stringFromDate:[self dateWithZeroSeconds:timePicker.date]];
+}
+
+- (NSDate *)dateWithZeroSeconds:(NSDate *)date
+{
+    NSTimeInterval time = floor([date timeIntervalSinceReferenceDate] / 60.0) * 60.0;
+    return  [NSDate dateWithTimeIntervalSinceReferenceDate:time];
 }
 
 - (IBAction)cancel:(id)sender

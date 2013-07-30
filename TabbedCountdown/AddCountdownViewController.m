@@ -7,7 +7,7 @@
 //
 
 #import "AddCountdownViewController.h"
-#import "Countdowns.h"
+#import "Countdown.h"
 
 @implementation AddCountdownViewController
 
@@ -30,6 +30,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.tableView setBackgroundView:nil];
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.0 green:214.0/256.0 blue:151.0/256.0 alpha:1.0];
+    
+    [self addTapGesture];
 
 }
 
@@ -59,7 +64,16 @@
 		timePickerViewController.delegate = self;
         NSLog(@"DEBUG: delegate for timePicker set");
 	}
+    if ([segue.identifier isEqualToString:@"untilTextSegue"])
+    {
+		UINavigationController *navigationController = segue.destinationViewController;
+		UntilTextViewController *untilTextViewController =
+        [[navigationController viewControllers] objectAtIndex:0];
+		untilTextViewController.delegate = self;
+        NSLog(@"DEBUG: delegate for untilText set");
+    }
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -79,7 +93,7 @@
 
 - (IBAction)done:(id)sender
 {
-    Countdowns *countdown = [[Countdowns alloc] init];
+    Countdown *countdown = [[Countdown alloc] init];
 	countdown.name = self.titleTextField.text;
     NSCalendar *cal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *dateComps = [cal components:(NSYearCalendarUnit   |
@@ -98,6 +112,9 @@
     NSDate *newDate = [cal dateFromComponents:newDateComps];
     NSLog(@"New date is %@", newDate);
 	countdown.targetDate = newDate;
+    
+    countdown.untilText = self.untilText;
+    
 	[self.delegate addCountdownViewController:self didAddCountdown:countdown];
 }
 
@@ -124,11 +141,11 @@
 
 -(void)timePickerViewController:(TimePickerViewController *)controller didGetTime:(NSDate *)time
 {
-    self.chosenTime = time;
+    self.chosenTime = [self dateWithZeroSeconds:time];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterNoStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:kCFDateFormatterShortStyle];
     
     self.timeDetailLabel.text = [dateFormatter stringFromDate:time];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -137,6 +154,42 @@
 - (void)timePickerViewControllerDidCancel:(TimePickerViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (NSDate *)dateWithZeroSeconds:(NSDate *)date
+{
+    NSTimeInterval time = floor([date timeIntervalSinceReferenceDate] / 60.0) * 60.0;
+    return  [NSDate dateWithTimeIntervalSinceReferenceDate:time];
+}
+
+
+#pragma mark - UntilTextViewControllerDelegate
+
+- (void)untilTextViewController:(UntilTextViewController*)controller didGetUntilText:(NSString *)text
+{
+    self.untilText = text;
+    self.untilTextLabel.text = text;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)untilTextViewControllerDidCancel:(UntilTextViewController *)controller
+{
+      [self dismissViewControllerAnimated:YES completion:nil];  
+}
+
+#pragma mark - Private
+- (void)addTapGesture
+{
+    // Add a tap gesture to the view to hide the keyboard if the user taps outside of it
+    UITapGestureRecognizer *tapView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
+    tapView.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapView];
+}
+
+- (void)closeKeyboard
+{
+    [self.view endEditing:YES];
 }
 
 

@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Countdowns : NSObject
+@interface Countdown : NSObject
 
 //Properties for name and target date
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSDate *targetDate;
+@property (nonatomic, copy) NSString *untilText;
 
 @end
