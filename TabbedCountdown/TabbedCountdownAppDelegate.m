@@ -8,47 +8,26 @@
 
 #import "TabbedCountdownAppDelegate.h"
 #import "CountdownTableViewController.h"
-#import "Countdowns.h"
+#import "Countdown.h"
 
-@implementation TabbedCountdownAppDelegate {
-    NSMutableArray *countdownsArray;
-}
-
-@synthesize window = _window;
+@implementation TabbedCountdownAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
-    //Read initial countdowns from plist
-    NSArray *arrayPaths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDir = [arrayPaths objectAtIndex:0];
-    NSString *finalPath = [docDir stringByAppendingPathComponent:@"Countdowns.plist"];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    //If list does not exist in documents dir, load default from bundle dir
-    if(![fileManager fileExistsAtPath:finalPath]) {
-        NSString *path = [[NSBundle mainBundle] bundlePath];
-        finalPath = [path stringByAppendingPathComponent:@"Countdowns.plist"];
-    }
-        
-    NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:finalPath];
-    countdownsArray = [NSMutableArray arrayWithCapacity:[plistData count]];
-    for(id key in plistData) {
-        Countdowns *countdown = [[Countdowns alloc] init];
-        NSDate *value = [plistData objectForKey:key];
-        NSLog(@"DEBUG: %@  %@", key, value);
-        countdown.name = key;
-        countdown.targetDate = value;
-        [countdownsArray addObject:countdown];
-    }
-    
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-	CountdownTableViewController *countdownTableViewController = [[navigationController viewControllers] objectAtIndex:0];
-	countdownTableViewController.countdownsArray = countdownsArray;
-    
+    [self setGlobalAppearance];
+
     return YES;
 }
-							
+
+- (void) setGlobalAppearance {
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:14.00],
+                                                NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

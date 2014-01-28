@@ -6,11 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "Countdowns.h"
+#import "Countdown.h"
 
-@implementation Countdowns
-
-@synthesize name;
-@synthesize targetDate;
+@implementation Countdown
 
 @end

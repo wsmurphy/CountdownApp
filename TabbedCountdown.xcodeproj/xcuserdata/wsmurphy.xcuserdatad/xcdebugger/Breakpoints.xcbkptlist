@@ -19,11 +19,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TabbedCountdown/AddCountdownViewController.m"
-         timestampString = "377215264.168335"
+         timestampString = "396840118.560491"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "126"
-         endingLineNumber = "126"
+         startingLineNumber = "143"
+         endingLineNumber = "143"
          landmarkName = "-timePickerViewController:didGetTime:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -32,11 +32,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TabbedCountdown/AddCountdownViewController.m"
-         timestampString = "377215264.168335"
+         timestampString = "396840118.560491"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "91"
-         endingLineNumber = "91"
+         startingLineNumber = "105"
+         endingLineNumber = "105"
          landmarkName = "-done:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -45,25 +45,64 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TabbedCountdown/CountdownViewController.m"
-         timestampString = "392704105.610945"
+         timestampString = "396843702.814282"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "89"
-         endingLineNumber = "89"
-         landmarkName = "-viewWillAppear:"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
+         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "No"
+         shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "TabbedCountdown/CountdownViewController.m"
-         timestampString = "392704105.610945"
+         filePath = "CountdownTableViewController.m"
+         timestampString = "396843702.814282"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "147"
-         endingLineNumber = "147"
-         landmarkName = "-shouldAutorotateToInterfaceOrientation:"
+         startingLineNumber = "99"
+         endingLineNumber = "99"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TabbedCountdown/AddCountdownViewController.m"
+         timestampString = "396840118.560491"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "170"
+         endingLineNumber = "170"
+         landmarkName = "-untilTextViewController:didGetUntilText:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TabbedCountdown/UntilTextViewController.m"
+         timestampString = "396839450.546596"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "29"
+         endingLineNumber = "29"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TabbedCountdown/UntilTextViewController.m"
+         timestampString = "396839450.546596"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
+         landmarkName = "-done:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

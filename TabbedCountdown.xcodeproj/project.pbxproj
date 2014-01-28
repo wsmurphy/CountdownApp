@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		60080F491534842100C8D6AD /* CountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60080F481534842100C8D6AD /* CountdownViewController.m */; };
 		601C19C916B9C5D700C1EB91 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 601C19C816B9C5D700C1EB91 /* Social.framework */; };
-		601C19E116BAEAF200C1EB91 /* twitter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 601C19DF16BAEAF200C1EB91 /* twitter.jpg */; };
-		601C19E216BAEAF200C1EB91 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 601C19E016BAEAF200C1EB91 /* facebook.png */; };
 		6024E5051576A273003E370D /* Countdowns.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6024E5041576A273003E370D /* Countdowns.plist */; };
 		604423BE15332C7E00032AB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604423BD15332C7E00032AB8 /* UIKit.framework */; };
 		604423C015332C7E00032AB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 604423BF15332C7E00032AB8 /* Foundation.framework */; };
@@ -18,16 +16,15 @@
 		604423C815332C7E00032AB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 604423C615332C7E00032AB8 /* InfoPlist.strings */; };
 		604423CA15332C7E00032AB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423C915332C7E00032AB8 /* main.m */; };
 		604423CE15332C7E00032AB8 /* TabbedCountdownAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423CD15332C7E00032AB8 /* TabbedCountdownAppDelegate.m */; };
-		604423D115332C7E00032AB8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 604423CF15332C7E00032AB8 /* MainStoryboard.storyboard */; };
+		604423D115332C7E00032AB8 /* MainStoryboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 604423CF15332C7E00032AB8 /* MainStoryboard-iPhone.storyboard */; };
 		604423DF1533323D00032AB8 /* CountdownTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423DE1533323D00032AB8 /* CountdownTableViewController.m */; };
-		604423E21533329D00032AB8 /* Countdowns.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423E11533329D00032AB8 /* Countdowns.m */; };
+		604423E21533329D00032AB8 /* Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423E11533329D00032AB8 /* Countdown.m */; };
 		604423E915333CA000032AB8 /* AddCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423E815333CA000032AB8 /* AddCountdownViewController.m */; };
 		604423F015335C6900032AB8 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423EF15335C6900032AB8 /* DatePickerViewController.m */; };
-		60705BAD168CD594004E88D3 /* clock.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60705BAC168CD594004E88D3 /* clock.gif */; };
+		60B3EEAC187B33DF006E7081 /* MainStoryboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B3EEAB187B33DF006E7081 /* MainStoryboard-iPad.storyboard */; };
+		60BF06D01898018500A172AB /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BF06CF1898018500A172AB /* EventKit.framework */; };
 		60D55FFD167BC98A00EB1119 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */; };
-		60FC72F5168DFBFC00A3D264 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 60FC72F4168DFBFC00A3D264 /* Common.m */; };
 		60FCE09816A09E7C009753C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FCE09716A09E7C009753C4 /* QuartzCore.framework */; };
-		60FCE09A16A0A6F9009753C4 /* earth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 60FCE09916A0A6F9009753C4 /* earth.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,20 +44,20 @@
 		604423CB15332C7E00032AB8 /* TabbedCountdown-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TabbedCountdown-Prefix.pch"; sourceTree = "<group>"; };
 		604423CC15332C7E00032AB8 /* TabbedCountdownAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbedCountdownAppDelegate.h; sourceTree = "<group>"; };
 		604423CD15332C7E00032AB8 /* TabbedCountdownAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbedCountdownAppDelegate.m; sourceTree = "<group>"; };
-		604423D015332C7E00032AB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		604423D015332C7E00032AB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/MainStoryboard-iPhone.storyboard"; sourceTree = "<group>"; };
 		604423DD1533323D00032AB8 /* CountdownTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountdownTableViewController.h; path = ../CountdownTableViewController.h; sourceTree = "<group>"; };
 		604423DE1533323D00032AB8 /* CountdownTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountdownTableViewController.m; path = ../CountdownTableViewController.m; sourceTree = "<group>"; };
-		604423E01533329D00032AB8 /* Countdowns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countdowns.h; sourceTree = "<group>"; };
-		604423E11533329D00032AB8 /* Countdowns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countdowns.m; sourceTree = "<group>"; };
+		604423E01533329D00032AB8 /* Countdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countdown.h; sourceTree = "<group>"; };
+		604423E11533329D00032AB8 /* Countdown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Countdown.m; sourceTree = "<group>"; };
 		604423E715333CA000032AB8 /* AddCountdownViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCountdownViewController.h; sourceTree = "<group>"; };
 		604423E815333CA000032AB8 /* AddCountdownViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCountdownViewController.m; sourceTree = "<group>"; };
 		604423EE15335C6900032AB8 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
 		604423EF15335C6900032AB8 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 		60705BAC168CD594004E88D3 /* clock.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = clock.gif; path = ../../../Downloads/clock.gif; sourceTree = "<group>"; };
+		60B3EEAB187B33DF006E7081 /* MainStoryboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "MainStoryboard-iPad.storyboard"; sourceTree = "<group>"; };
+		60BF06CF1898018500A172AB /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		60D55FFB167BC98A00EB1119 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
-		60FC72F3168DFBFC00A3D264 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		60FC72F4168DFBFC00A3D264 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
 		60FCE09716A09E7C009753C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		60FCE09916A0A6F9009753C4 /* earth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = earth.jpg; path = ../../../Downloads/earth.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60BF06D01898018500A172AB /* EventKit.framework in Frameworks */,
 				601C19C916B9C5D700C1EB91 /* Social.framework in Frameworks */,
 				60FCE09816A09E7C009753C4 /* QuartzCore.framework in Frameworks */,
 				604423BE15332C7E00032AB8 /* UIKit.framework in Frameworks */,
@@ -84,8 +82,6 @@
 		604423AE15332C7E00032AB8 = {
 			isa = PBXGroup;
 			children = (
-				601C19C816B9C5D700C1EB91 /* Social.framework */,
-				60FCE09716A09E7C009753C4 /* QuartzCore.framework */,
 				604423C315332C7E00032AB8 /* TabbedCountdown */,
 				604423BC15332C7E00032AB8 /* Frameworks */,
 				604423BA15332C7E00032AB8 /* Products */,
@@ -103,6 +99,9 @@
 		604423BC15332C7E00032AB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60BF06CF1898018500A172AB /* EventKit.framework */,
+				601C19C816B9C5D700C1EB91 /* Social.framework */,
+				60FCE09716A09E7C009753C4 /* QuartzCore.framework */,
 				604423BD15332C7E00032AB8 /* UIKit.framework */,
 				604423BF15332C7E00032AB8 /* Foundation.framework */,
 				604423C115332C7E00032AB8 /* CoreGraphics.framework */,
@@ -113,15 +112,15 @@
 		604423C315332C7E00032AB8 /* TabbedCountdown */ = {
 			isa = PBXGroup;
 			children = (
+				60B3EEAA187B33AD006E7081 /* Storyboards */,
 				60080F471534842100C8D6AD /* CountdownViewController.h */,
 				60080F481534842100C8D6AD /* CountdownViewController.m */,
 				604423DD1533323D00032AB8 /* CountdownTableViewController.h */,
-				604423E01533329D00032AB8 /* Countdowns.h */,
-				604423E11533329D00032AB8 /* Countdowns.m */,
+				604423E01533329D00032AB8 /* Countdown.h */,
+				604423E11533329D00032AB8 /* Countdown.m */,
 				604423DE1533323D00032AB8 /* CountdownTableViewController.m */,
 				604423CC15332C7E00032AB8 /* TabbedCountdownAppDelegate.h */,
 				604423CD15332C7E00032AB8 /* TabbedCountdownAppDelegate.m */,
-				604423CF15332C7E00032AB8 /* MainStoryboard.storyboard */,
 				604423E715333CA000032AB8 /* AddCountdownViewController.h */,
 				604423E815333CA000032AB8 /* AddCountdownViewController.m */,
 				604423C415332C7E00032AB8 /* Supporting Files */,
@@ -129,8 +128,6 @@
 				604423EF15335C6900032AB8 /* DatePickerViewController.m */,
 				60D55FFB167BC98A00EB1119 /* TimePickerViewController.h */,
 				60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */,
-				60FC72F3168DFBFC00A3D264 /* Common.h */,
-				60FC72F4168DFBFC00A3D264 /* Common.m */,
 			);
 			path = TabbedCountdown;
 			sourceTree = "<group>";
@@ -149,6 +146,15 @@
 				6024E5041576A273003E370D /* Countdowns.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60B3EEAA187B33AD006E7081 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				604423CF15332C7E00032AB8 /* MainStoryboard-iPhone.storyboard */,
+				60B3EEAB187B33DF006E7081 /* MainStoryboard-iPad.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,12 +209,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				604423C815332C7E00032AB8 /* InfoPlist.strings in Resources */,
-				604423D115332C7E00032AB8 /* MainStoryboard.storyboard in Resources */,
+				604423D115332C7E00032AB8 /* MainStoryboard-iPhone.storyboard in Resources */,
+				60B3EEAC187B33DF006E7081 /* MainStoryboard-iPad.storyboard in Resources */,
 				6024E5051576A273003E370D /* Countdowns.plist in Resources */,
-				60705BAD168CD594004E88D3 /* clock.gif in Resources */,
-				60FCE09A16A0A6F9009753C4 /* earth.jpg in Resources */,
-				601C19E116BAEAF200C1EB91 /* twitter.jpg in Resources */,
-				601C19E216BAEAF200C1EB91 /* facebook.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,12 +225,11 @@
 				604423CA15332C7E00032AB8 /* main.m in Sources */,
 				604423CE15332C7E00032AB8 /* TabbedCountdownAppDelegate.m in Sources */,
 				604423DF1533323D00032AB8 /* CountdownTableViewController.m in Sources */,
-				604423E21533329D00032AB8 /* Countdowns.m in Sources */,
+				604423E21533329D00032AB8 /* Countdown.m in Sources */,
 				604423E915333CA000032AB8 /* AddCountdownViewController.m in Sources */,
 				604423F015335C6900032AB8 /* DatePickerViewController.m in Sources */,
 				60080F491534842100C8D6AD /* CountdownViewController.m in Sources */,
 				60D55FFD167BC98A00EB1119 /* TimePickerViewController.m in Sources */,
-				60FC72F5168DFBFC00A3D264 /* Common.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,12 +244,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		604423CF15332C7E00032AB8 /* MainStoryboard.storyboard */ = {
+		604423CF15332C7E00032AB8 /* MainStoryboard-iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				604423D015332C7E00032AB8 /* en */,
 			);
-			name = MainStoryboard.storyboard;
+			name = "MainStoryboard-iPhone.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -304,8 +306,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TabbedCountdown/TabbedCountdown-Prefix.pch";
 				INFOPLIST_FILE = "TabbedCountdown/TabbedCountdown-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -316,8 +319,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TabbedCountdown/TabbedCountdown-Prefix.pch";
 				INFOPLIST_FILE = "TabbedCountdown/TabbedCountdown-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
