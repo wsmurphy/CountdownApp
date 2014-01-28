@@ -15,8 +15,6 @@
 
 @implementation CountdownTableViewController
 
-@synthesize countdownsArray;
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -29,6 +27,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self loadCountdownsList];
 }
 
 - (void)viewDidUnload
@@ -57,11 +57,39 @@
         CountdownViewController *countdownViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Countdown *countdown = [self.countdownsArray objectAtIndex:indexPath.row];
-        countdownViewController.targetDate = countdown.targetDate;
+        countdownViewController.countdown = countdown;
         countdownViewController.title = countdown.name;
-        countdownViewController.untilText = countdown.untilText;
         countdownViewController.delegate = self;
 	}
+}
+
+- (void) loadCountdownsList {
+    
+    //Read initial countdowns from plist
+    NSArray *arrayPaths = NSSearchPathForDirectoriesInDomains( NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDir = [arrayPaths objectAtIndex:0];
+    NSString *finalPath = [docDir stringByAppendingPathComponent:@"Countdowns.plist"];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    //If list does not exist in documents dir, load default from bundle dir
+    if(![fileManager fileExistsAtPath:finalPath]) {
+        NSString *path = [[NSBundle mainBundle] bundlePath];
+        finalPath = [path stringByAppendingPathComponent:@"Countdowns.plist"];
+    }
+    
+    
+    NSDictionary *plistData = [NSDictionary dictionaryWithContentsOfFile:finalPath];
+    NSMutableArray *countdownsArray = [NSMutableArray arrayWithCapacity:[plistData count]];
+    for(id key in plistData) {
+        Countdown *countdown = [[Countdown alloc] init];
+        NSDate *value = [plistData objectForKey:key];
+        NSLog(@"DEBUG: %@  %@", key, value);
+        countdown.name = key;
+        countdown.targetDate = value;
+        [countdownsArray addObject:countdown];
+    }
+    
+	self.countdownsArray = countdownsArray;
 }
 
 #pragma mark - Table view data source

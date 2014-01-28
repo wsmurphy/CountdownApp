@@ -64,16 +64,7 @@
 		timePickerViewController.delegate = self;
         NSLog(@"DEBUG: delegate for timePicker set");
 	}
-    if ([segue.identifier isEqualToString:@"untilTextSegue"])
-    {
-		UINavigationController *navigationController = segue.destinationViewController;
-		UntilTextViewController *untilTextViewController =
-        [[navigationController viewControllers] objectAtIndex:0];
-		untilTextViewController.delegate = self;
-        NSLog(@"DEBUG: delegate for untilText set");
-    }
 }
-
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -112,8 +103,8 @@
     NSDate *newDate = [cal dateFromComponents:newDateComps];
     NSLog(@"New date is %@", newDate);
 	countdown.targetDate = newDate;
-    
-    countdown.untilText = self.untilText;
+
+    countdown.untilText = self.untilField.text;
     
 	[self.delegate addCountdownViewController:self didAddCountdown:countdown];
 }
@@ -162,21 +153,6 @@
     return  [NSDate dateWithTimeIntervalSinceReferenceDate:time];
 }
 
-
-#pragma mark - UntilTextViewControllerDelegate
-
-- (void)untilTextViewController:(UntilTextViewController*)controller didGetUntilText:(NSString *)text
-{
-    self.untilText = text;
-    self.untilTextLabel.text = text;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)untilTextViewControllerDidCancel:(UntilTextViewController *)controller
-{
-      [self dismissViewControllerAnimated:YES completion:nil];  
-}
 
 #pragma mark - Private
 - (void)addTapGesture

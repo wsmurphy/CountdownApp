@@ -1,0 +1,42 @@
+#OSX Related
+.DS_Store
+.Trashes
+.Spotlight-V100
+.AppleDouble
+.LSOverride
+
+*.lock
+
+#IntelliJ / AppCode Related
+.idea/
+*.iml
+*.ipr
+*.iws
+*.hmap
+
+#xCode Related
+
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+build/*
+*.xcworkspace
+!xcshareddata
+*~.nib
+
+
+#Other
+*.zip
+\.#*
+html 
+latex

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "DatePickerViewController.h"
 #import "TimePickerViewController.h"
-#import "UntilTextViewController.h"
 
 @class AddCountdownViewController;
 @class Countdown;
@@ -20,7 +19,7 @@
     - (void)addCountdownViewController:(AddCountdownViewController *)controller didAddCountdown:(Countdown *)countdown;
 @end
 
-@interface AddCountdownViewController : UITableViewController <DatePickerViewControllerDelegate, TimePickerViewControllerDelegate, UntilTextViewControllerDelegate>
+@interface AddCountdownViewController : UITableViewController <DatePickerViewControllerDelegate, TimePickerViewControllerDelegate>
 
     @property (assign) id <AddCountdownViewControllerDelegate> delegate;
     @property (strong, nonatomic) IBOutlet UITextField *titleTextField;
@@ -28,8 +27,8 @@
     @property (strong, nonatomic) IBOutlet UILabel *dateDetailLabel;
     @property (strong, nonatomic) NSDate *chosenTime;
     @property (strong, nonatomic) IBOutlet UILabel *timeDetailLabel;
-    @property (strong, nonatomic) NSString *untilText;
-    @property (weak, nonatomic) IBOutlet UILabel *untilTextLabel;
+    @property (weak, nonatomic) IBOutlet UITextField *untilField;
+
 
     - (IBAction)cancel:(id)sender;
     - (IBAction)done:(id)sender;

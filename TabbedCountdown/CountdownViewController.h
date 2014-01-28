@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Countdown.h"
 
 @class CountdownViewController;
 
@@ -16,24 +17,17 @@
 
 @end
 
-@interface CountdownViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate> {
-    
-    __weak IBOutlet UILabel *myCountdownMins;
-    __weak IBOutlet UILabel *myCountdownDays;
-}
+@interface CountdownViewController : UIViewController <UITextFieldDelegate, UIActionSheetDelegate>
 
 @property (assign) id <CountdownViewControllerDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UILabel *myCountdownDays;
-@property (weak, nonatomic) IBOutlet UILabel *myCountdownMins;
-@property (weak, nonatomic) IBOutlet UILabel *myCountdownHours;
-@property (weak, nonatomic) IBOutlet UILabel *myCountdownSeconds;
+
+@property (weak, nonatomic) IBOutlet UILabel *dateTimeLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *targetLabel;
 
 @property (strong, nonatomic) IBOutlet UIView *expiredView;
 
-@property (nonatomic, retain) NSDate *targetDate;
-@property (nonatomic, retain) NSString *untilText;
+@property (weak, nonatomic) Countdown *countdown;
 
 - (IBAction)showFullDate:(id)sender;
 
