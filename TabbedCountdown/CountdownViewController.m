@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import <Social/Social.h>
 #import <EventKit/EventKit.h>
+#import "TabbedCountdown-Swift.h"
 
 @interface CountdownViewController ()
 {
@@ -38,19 +39,9 @@ NS_ENUM(NSInteger, sharingOptions) {
 
 - (void)updateCounter:(NSTimer *)theTimer {
 
-    NSTimeInterval since = [self getIntervalInSeconds];
-    int days = since / 86400;
-    int remHours = ((int)since % 86400) / 3600;
-    int remMins = (((int)since % 86400) % 3600) / 60;
-    int remSecs = (((int)since % 86400) % 3600) % 60;
-    
-    if(days > 1) {
-        self.dateTimeLabel.text = [NSString stringWithFormat:@"%d days, %d hours, %d minutes, %dseconds", days, remHours, remMins, remSecs];
-    } else if (days == 1){
-        self.dateTimeLabel.text = [NSString stringWithFormat:@"%d days, %d hours, %d minutes, %dseconds", days, remHours, remMins, remSecs];
-    } else {
-        self.dateTimeLabel.text = [NSString stringWithFormat:@"%d hours, %d minutes, %dseconds", remHours, remMins, remSecs];
-    }
+    //Using Swift here to formate targetDate string
+    NSString *since = [StringFormatter timeLeftStringFromDate:self.countdown.targetDate];
+    self.dateTimeLabel.text = since;
 }
 
 - (void)viewDidLoad {

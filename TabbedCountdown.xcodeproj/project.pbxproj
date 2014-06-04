@@ -16,12 +16,12 @@
 		604423C815332C7E00032AB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 604423C615332C7E00032AB8 /* InfoPlist.strings */; };
 		604423CA15332C7E00032AB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423C915332C7E00032AB8 /* main.m */; };
 		604423CE15332C7E00032AB8 /* TabbedCountdownAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423CD15332C7E00032AB8 /* TabbedCountdownAppDelegate.m */; };
-		604423D115332C7E00032AB8 /* MainStoryboard-iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 604423CF15332C7E00032AB8 /* MainStoryboard-iPhone.storyboard */; };
+		604423D115332C7E00032AB8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 604423CF15332C7E00032AB8 /* MainStoryboard.storyboard */; };
 		604423DF1533323D00032AB8 /* CountdownTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423DE1533323D00032AB8 /* CountdownTableViewController.m */; };
 		604423E21533329D00032AB8 /* Countdown.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423E11533329D00032AB8 /* Countdown.m */; };
 		604423E915333CA000032AB8 /* AddCountdownViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423E815333CA000032AB8 /* AddCountdownViewController.m */; };
 		604423F015335C6900032AB8 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 604423EF15335C6900032AB8 /* DatePickerViewController.m */; };
-		60B3EEAC187B33DF006E7081 /* MainStoryboard-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B3EEAB187B33DF006E7081 /* MainStoryboard-iPad.storyboard */; };
+		60AACD62193EDA7E00143D7C /* StringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60AACD61193EDA7E00143D7C /* StringFormatter.swift */; };
 		60BF06D01898018500A172AB /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BF06CF1898018500A172AB /* EventKit.framework */; };
 		60D55FFD167BC98A00EB1119 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */; };
 		60FCE09816A09E7C009753C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60FCE09716A09E7C009753C4 /* QuartzCore.framework */; };
@@ -44,7 +44,7 @@
 		604423CB15332C7E00032AB8 /* TabbedCountdown-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TabbedCountdown-Prefix.pch"; sourceTree = "<group>"; };
 		604423CC15332C7E00032AB8 /* TabbedCountdownAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabbedCountdownAppDelegate.h; sourceTree = "<group>"; };
 		604423CD15332C7E00032AB8 /* TabbedCountdownAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabbedCountdownAppDelegate.m; sourceTree = "<group>"; };
-		604423D015332C7E00032AB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = "en.lproj/MainStoryboard-iPhone.storyboard"; sourceTree = "<group>"; };
+		604423D015332C7E00032AB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		604423DD1533323D00032AB8 /* CountdownTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CountdownTableViewController.h; path = ../CountdownTableViewController.h; sourceTree = "<group>"; };
 		604423DE1533323D00032AB8 /* CountdownTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CountdownTableViewController.m; path = ../CountdownTableViewController.m; sourceTree = "<group>"; };
 		604423E01533329D00032AB8 /* Countdown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Countdown.h; sourceTree = "<group>"; };
@@ -54,7 +54,8 @@
 		604423EE15335C6900032AB8 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
 		604423EF15335C6900032AB8 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 		60705BAC168CD594004E88D3 /* clock.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = clock.gif; path = ../../../Downloads/clock.gif; sourceTree = "<group>"; };
-		60B3EEAB187B33DF006E7081 /* MainStoryboard-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "MainStoryboard-iPad.storyboard"; sourceTree = "<group>"; };
+		60AACD60193EDA7D00143D7C /* TabbedCountdown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TabbedCountdown-Bridging-Header.h"; sourceTree = "<group>"; };
+		60AACD61193EDA7E00143D7C /* StringFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
 		60BF06CF1898018500A172AB /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		60D55FFB167BC98A00EB1119 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
@@ -82,9 +83,11 @@
 		604423AE15332C7E00032AB8 = {
 			isa = PBXGroup;
 			children = (
+				60AACD61193EDA7E00143D7C /* StringFormatter.swift */,
 				604423C315332C7E00032AB8 /* TabbedCountdown */,
 				604423BC15332C7E00032AB8 /* Frameworks */,
 				604423BA15332C7E00032AB8 /* Products */,
+				60AACD60193EDA7D00143D7C /* TabbedCountdown-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,8 +154,7 @@
 		60B3EEAA187B33AD006E7081 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				604423CF15332C7E00032AB8 /* MainStoryboard-iPhone.storyboard */,
-				60B3EEAB187B33DF006E7081 /* MainStoryboard-iPad.storyboard */,
+				604423CF15332C7E00032AB8 /* MainStoryboard.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -209,8 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				604423C815332C7E00032AB8 /* InfoPlist.strings in Resources */,
-				604423D115332C7E00032AB8 /* MainStoryboard-iPhone.storyboard in Resources */,
-				60B3EEAC187B33DF006E7081 /* MainStoryboard-iPad.storyboard in Resources */,
+				604423D115332C7E00032AB8 /* MainStoryboard.storyboard in Resources */,
 				6024E5051576A273003E370D /* Countdowns.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				604423CA15332C7E00032AB8 /* main.m in Sources */,
+				60AACD62193EDA7E00143D7C /* StringFormatter.swift in Sources */,
 				604423CE15332C7E00032AB8 /* TabbedCountdownAppDelegate.m in Sources */,
 				604423DF1533323D00032AB8 /* CountdownTableViewController.m in Sources */,
 				604423E21533329D00032AB8 /* Countdown.m in Sources */,
@@ -244,12 +246,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		604423CF15332C7E00032AB8 /* MainStoryboard-iPhone.storyboard */ = {
+		604423CF15332C7E00032AB8 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				604423D015332C7E00032AB8 /* en */,
 			);
-			name = "MainStoryboard-iPhone.storyboard";
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -275,7 +277,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -293,7 +295,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -303,11 +305,15 @@
 		604423D815332C7E00032AB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TabbedCountdown/TabbedCountdown-Prefix.pch";
 				INFOPLIST_FILE = "TabbedCountdown/TabbedCountdown-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TabbedCountdown-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -316,11 +322,14 @@
 		604423D915332C7E00032AB8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TabbedCountdown/TabbedCountdown-Prefix.pch";
 				INFOPLIST_FILE = "TabbedCountdown/TabbedCountdown-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TabbedCountdown-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
