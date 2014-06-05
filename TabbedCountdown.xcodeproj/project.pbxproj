@@ -55,7 +55,7 @@
 		604423EF15335C6900032AB8 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 		60705BAC168CD594004E88D3 /* clock.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = clock.gif; path = ../../../Downloads/clock.gif; sourceTree = "<group>"; };
 		60AACD60193EDA7D00143D7C /* TabbedCountdown-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TabbedCountdown-Bridging-Header.h"; sourceTree = "<group>"; };
-		60AACD61193EDA7E00143D7C /* StringFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringFormatter.swift; sourceTree = "<group>"; };
+		60AACD61193EDA7E00143D7C /* StringFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringFormatter.swift; path = ../StringFormatter.swift; sourceTree = "<group>"; };
 		60BF06CF1898018500A172AB /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		60D55FFB167BC98A00EB1119 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
@@ -83,7 +83,6 @@
 		604423AE15332C7E00032AB8 = {
 			isa = PBXGroup;
 			children = (
-				60AACD61193EDA7E00143D7C /* StringFormatter.swift */,
 				604423C315332C7E00032AB8 /* TabbedCountdown */,
 				604423BC15332C7E00032AB8 /* Frameworks */,
 				604423BA15332C7E00032AB8 /* Products */,
@@ -115,22 +114,13 @@
 		604423C315332C7E00032AB8 /* TabbedCountdown */ = {
 			isa = PBXGroup;
 			children = (
+				60F4B6BF1940D20500BFE723 /* Utilities */,
+				60F4B6BE1940D1E700BFE723 /* Controllers */,
+				60F4B6BD1940D1D500BFE723 /* Model */,
 				60B3EEAA187B33AD006E7081 /* Storyboards */,
-				60080F471534842100C8D6AD /* CountdownViewController.h */,
-				60080F481534842100C8D6AD /* CountdownViewController.m */,
-				604423DD1533323D00032AB8 /* CountdownTableViewController.h */,
-				604423E01533329D00032AB8 /* Countdown.h */,
-				604423E11533329D00032AB8 /* Countdown.m */,
-				604423DE1533323D00032AB8 /* CountdownTableViewController.m */,
 				604423CC15332C7E00032AB8 /* TabbedCountdownAppDelegate.h */,
 				604423CD15332C7E00032AB8 /* TabbedCountdownAppDelegate.m */,
-				604423E715333CA000032AB8 /* AddCountdownViewController.h */,
-				604423E815333CA000032AB8 /* AddCountdownViewController.m */,
 				604423C415332C7E00032AB8 /* Supporting Files */,
-				604423EE15335C6900032AB8 /* DatePickerViewController.h */,
-				604423EF15335C6900032AB8 /* DatePickerViewController.m */,
-				60D55FFB167BC98A00EB1119 /* TimePickerViewController.h */,
-				60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */,
 			);
 			path = TabbedCountdown;
 			sourceTree = "<group>";
@@ -157,6 +147,40 @@
 				604423CF15332C7E00032AB8 /* MainStoryboard.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		60F4B6BD1940D1D500BFE723 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				604423E01533329D00032AB8 /* Countdown.h */,
+				604423E11533329D00032AB8 /* Countdown.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		60F4B6BE1940D1E700BFE723 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				60080F471534842100C8D6AD /* CountdownViewController.h */,
+				60080F481534842100C8D6AD /* CountdownViewController.m */,
+				604423DD1533323D00032AB8 /* CountdownTableViewController.h */,
+				604423DE1533323D00032AB8 /* CountdownTableViewController.m */,
+				604423E715333CA000032AB8 /* AddCountdownViewController.h */,
+				604423E815333CA000032AB8 /* AddCountdownViewController.m */,
+				604423EE15335C6900032AB8 /* DatePickerViewController.h */,
+				604423EF15335C6900032AB8 /* DatePickerViewController.m */,
+				60D55FFB167BC98A00EB1119 /* TimePickerViewController.h */,
+				60D55FFC167BC98A00EB1119 /* TimePickerViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		60F4B6BF1940D20500BFE723 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				60AACD61193EDA7E00143D7C /* StringFormatter.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

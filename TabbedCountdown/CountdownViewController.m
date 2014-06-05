@@ -12,6 +12,12 @@
 #import <EventKit/EventKit.h>
 #import "TabbedCountdown-Swift.h"
 
+//TODO: Convert #defines to const
+#define kTwitterErrorMessage @"Cannot post to Twitter. Please check your Twitter Login in the Settings App"
+#define kErrorTitle @"Error"
+#define kOKButtonText @"OK"
+//const NSString *twitterErrorMessage = @"Cannot post to Twitter. Please check your Twitter Login in the Settings App";
+
 @interface CountdownViewController ()
 {
     NSTimer *timer;
@@ -128,7 +134,12 @@ NS_ENUM(NSInteger, sharingOptions) {
 
 - (IBAction)actionSheetButtonPressed:(id)sender {
     //Create action sheet
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Facebook", @"Twitter", @"Add to Calendar", @"Add Reminder", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Share"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:@"Facebook", @"Twitter", @"Add to Calendar", @"Add Reminder", nil];
+    
     [actionSheet showFromBarButtonItem:sender animated:YES];
     
 }
@@ -159,16 +170,10 @@ NS_ENUM(NSInteger, sharingOptions) {
     //Let's get the text to post
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
-        NSTimeInterval since = [self getIntervalInSeconds];
-        int days = since / 86400;
-        int remHours = ((int)since % 86400) / 3600;
-        int remMins = (((int)since % 86400) % 3600) / 60;
-        int remSecs = (((int)since % 86400) % 3600) % 60;
-        
         SLComposeViewController *faceBookSheet=[SLComposeViewController composeViewControllerForServiceType: SLServiceTypeFacebook];
         
         //Calls the function for set Text
-        [faceBookSheet setInitialText:[NSString stringWithFormat:@"I have %d days %d hours %d minutes %d seconds until %@.", days, remHours, remMins, remSecs, self.title]];
+        [faceBookSheet setInitialText:[StringFormatter socialStringFromDate:self.countdown.targetDate title:self.title]];
         
         // Specifying a block to be called when the user is finished. This block is not guaranteed
         // To be called on any particular thread. It is cleared after being called.
@@ -180,7 +185,7 @@ NS_ENUM(NSInteger, sharingOptions) {
                     [[[UIAlertView alloc] initWithTitle:@"Facebook Completion Message"
                                                 message:@"Post Successful"
                                                delegate:nil
-                                      cancelButtonTitle:@"Ok"
+                                      cancelButtonTitle:kOKButtonText
                                       otherButtonTitles:nil] show];
                     break;
                 default:
@@ -191,7 +196,11 @@ NS_ENUM(NSInteger, sharingOptions) {
         //Presenting the FB sheet
         [self presentViewController:faceBookSheet animated: YES completion: nil];
     } else {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot post to Twitter. Please check your Twitter Login in the Settings App" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:kErrorTitle
+                                    message:kTwitterErrorMessage
+                                   delegate:nil
+                          cancelButtonTitle:kOKButtonText
+                          otherButtonTitles:nil] show];
     }
     
 }
@@ -202,16 +211,10 @@ NS_ENUM(NSInteger, sharingOptions) {
     //Let's get the text to post
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
-        NSTimeInterval since = [self getIntervalInSeconds];
-        int days = since / 86400;
-        int remHours = ((int)since % 86400) / 3600;
-        int remMins = (((int)since % 86400) % 3600) / 60;
-        int remSecs = (((int)since % 86400) % 3600) % 60;
-        
         SLComposeViewController *twitterSheet=[SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         //Calls the function for set Text
-        [twitterSheet setInitialText:[NSString stringWithFormat:@"I have %d days %d hours %d minutes %d seconds until %@.", days, remHours, remMins, remSecs, self.title]];
+        [twitterSheet setInitialText:[StringFormatter socialStringFromDate:self.countdown.targetDate title:self.title]];
         
         // Specifying a block to be called when the user is finished. This block is not guaranteed
         // To be called on any particular thread. It is cleared after being called.
@@ -225,7 +228,7 @@ NS_ENUM(NSInteger, sharingOptions) {
                     [[[UIAlertView alloc] initWithTitle:@"Twitter Completion Message"
                                                 message:@"Tweet Successful"
                                                delegate:nil
-                                      cancelButtonTitle:@"Ok"
+                                      cancelButtonTitle:kOKButtonText
                                       otherButtonTitles:nil] show];
                     break;
                 default:
@@ -236,7 +239,11 @@ NS_ENUM(NSInteger, sharingOptions) {
         //Presenting the Twitter sheet
         [self presentViewController:twitterSheet animated: YES completion: nil];
     } else {
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"Cannot post to Twitter. Please check your Twitter Login in the Settings App" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        [[[UIAlertView alloc] initWithTitle:kErrorTitle
+                                    message:kTwitterErrorMessage
+                                   delegate:nil
+                          cancelButtonTitle:kOKButtonText
+                          otherButtonTitles:nil] show];
     }
     
 }
@@ -255,7 +262,11 @@ NS_ENUM(NSInteger, sharingOptions) {
             NSError *err = nil;
             [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
             if(err != nil) {
-                [[[UIAlertView alloc] initWithTitle:@"Error" message:err.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                [[[UIAlertView alloc] initWithTitle:kErrorTitle
+                                            message:err.localizedDescription
+                                           delegate:nil
+                                  cancelButtonTitle:kOKButtonText
+                                  otherButtonTitles:nil] show];
             }
         }
     }];
@@ -276,7 +287,11 @@ NS_ENUM(NSInteger, sharingOptions) {
             NSError *err = nil;
             [store saveReminder:reminder commit:YES error:&err];
             if(err != nil) {
-                [[[UIAlertView alloc] initWithTitle:@"Error" message:err.localizedDescription delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+                [[[UIAlertView alloc] initWithTitle:kErrorTitle
+                                            message:err.localizedDescription
+                                           delegate:nil
+                                  cancelButtonTitle:kOKButtonText
+                                  otherButtonTitles:nil] show];
             }
         }
     }];
