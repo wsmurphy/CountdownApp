@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AddCountdownViewController.h"
 #import "CountdownViewController.h"
+#import "TabbedCountdown-Swift.h"
 
 @interface CountdownTableViewController : UITableViewController  <AddCountdownViewControllerDelegate, CountdownViewControllerDelegate>
 

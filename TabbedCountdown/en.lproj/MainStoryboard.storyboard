@@ -83,7 +83,7 @@
         <!--Add Countdown View Controller-->
         <scene sceneID="8zT-w0-7Yz">
             <objects>
-                <tableViewController id="cQE-uo-0Kr" customClass="AddCountdownViewController" sceneMemberID="viewController">
+                <tableViewController id="cQE-uo-0Kr" customClass="AddCountdownViewController" customModule="TabbedCountdown" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="5NP-OL-x2b">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,20 +209,20 @@
                     <navigationItem key="navigationItem" id="6Xf-5G-ymz">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="F7D-MD-8qR">
                             <connections>
-                                <action selector="cancel:" destination="cQE-uo-0Kr" id="w6L-hS-11X"/>
+                                <action selector="cancel:" destination="cQE-uo-0Kr" id="HEf-rh-fWe"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Fgm-BF-YdB">
                             <connections>
-                                <action selector="done:" destination="cQE-uo-0Kr" id="7x7-dL-Bsm"/>
+                                <action selector="done:" destination="cQE-uo-0Kr" id="nJq-r8-EXJ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dateDetailLabel" destination="qcS-7Y-hHL" id="dUW-Eb-u5T"/>
-                        <outlet property="timeDetailLabel" destination="nfN-30-Tqm" id="oJF-Ty-EaZ"/>
-                        <outlet property="titleTextField" destination="Z3O-oP-gIv" id="TVP-hI-hvA"/>
-                        <outlet property="untilField" destination="v2U-R9-m7R" id="pep-I0-PNj"/>
+                        <outlet property="dateDetailLabel" destination="qcS-7Y-hHL" id="2Hd-GJ-iiV"/>
+                        <outlet property="timeDetailLabel" destination="nfN-30-Tqm" id="Hbh-Hy-wCk"/>
+                        <outlet property="titleTextField" destination="Z3O-oP-gIv" id="myP-nf-n7l"/>
+                        <outlet property="untilField" destination="v2U-R9-m7R" id="TrH-wG-7oT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iw3-Jl-53k" userLabel="First Responder" sceneMemberID="firstResponder"/>
